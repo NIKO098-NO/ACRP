@@ -39,6 +39,10 @@ app.use(
   })
 );
 
+// Fast server-side redirects (no meta-refresh delay)
+app.get("/", (_req, res) => res.redirect(302, "/home.html"));
+app.get("/index.html", (_req, res) => res.redirect(302, "/home.html"));
+
 app.use(express.static(__dirname));
 
 function requireStaff(req, res, next) {
