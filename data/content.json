@@ -20,16 +20,16 @@
   ],
   "staff": [
     {
-      "name": "Chief Mason Reed",
+      "name": "Founder Zach",
       "role": "Server Director",
       "bio": "Oversees staff standards and major community decisions.",
-      "pfp": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=240&q=80"
+      "pfp": "https://cdn.discordapp.com/avatars/1236801401061900288/3a9a95633d91179723355974fd4e2878.png?size=1024"
     },
     {
-      "name": "Deputy Ava Turner",
-      "role": "Community Manager",
-      "bio": "Handles moderation flow, scheduling, and policy updates.",
-      "pfp": "https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=240&q=80"
+      "name": "Niko",
+      "role": "Web Developer",
+      "bio": "The one who made this website.",
+      "pfp": "https://cdn.discordapp.com/avatars/1413433249518190622/b2962f80f8dc7e084870f8958630e04c.png?size=1024"
     }
   ],
   "gallery": [
