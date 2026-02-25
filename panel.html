@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASRP | Staff Panel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Sora:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <nav class="site-nav">
+    <a class="brand" href="home.html"><div class="badge">A</div><div><h1>Alabama State Roleplay</h1><small>Staff Control Panel</small></div></a>
+    <button id="menuToggle" class="menu-toggle" type="button" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+    <div id="navLinks" class="nav-links"><a href="home.html">Back to Site</a><a id="logoutLink" data-server-route="/auth/logout" href="/auth/logout">Logout</a></div>
+  </nav>
+
+  <main id="panelRoot">
+    <section>
+      <div class="section-head reveal"><h3>Staff Panel</h3><p>Discord login required. Must be in server and have one of the configured staff role IDs.</p></div>
+      <div id="accountInfo"></div>
+
+      <div id="authBox" class="panel" style="display:none; max-width:720px; margin:0 auto;">
+        <p style="margin-bottom:12px;color:#d6e0ed;">Sign in with Discord to access staff editing tools.</p>
+        <a id="discordAuthLink" class="btn btn-main" data-server-route="/auth/discord" href="/auth/discord"><i class="fa-brands fa-discord"></i> Login with Discord (Staff Panel)</a>
+      </div>
+
+      <div id="editorBox" style="display:none;">
+        <div class="panel reveal">
+          <h4 style="margin-bottom:10px;">Site Settings (JSON)</h4>
+          <textarea id="siteJson"></textarea>
+        </div>
+
+        <div class="panel reveal">
+          <h4 style="margin-bottom:10px;">Events (JSON)</h4>
+          <textarea id="eventsJson"></textarea>
+        </div>
+
+        <div class="panel reveal">
+          <h4 style="margin-bottom:10px;">Staff Members (JSON)</h4>
+          <textarea id="staffJson"></textarea>
+        </div>
+
+        <div class="panel reveal">
+          <h4 style="margin-bottom:10px;">Gallery (JSON)</h4>
+          <textarea id="galleryJson"></textarea>
+        </div>
+
+        <div class="panel reveal">
+          <h4 style="margin-bottom:10px;">Rules (JSON)</h4>
+          <textarea id="rulesJson"></textarea>
+        </div>
+
+        <div class="panel reveal">
+          <button id="saveAllBtn" class="btn btn-main" type="button"><i class="fa-solid fa-floppy-disk"></i> Save All Changes</button>
+          <p id="saveStatus" style="margin-top:10px;color:#b8c6d8;"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-wrap">
+      <div class="footer-top">
+        <div class="footer-brand"><i class="fa-solid fa-shield-halved"></i> Alabama State Roleplay ERLC</div>
+        <div class="footer-links">
+          <a href="home.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="rules.html">Rules</a>
+          <a href="events.html">Events</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://discord.gg/yourinvite" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-discord"></i> Discord</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Alabama State Roleplay ERLC</span>
+        <span>Serious ERLC Alabama roleplay community</span>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/script.js"></script>
+</body>
+</html>

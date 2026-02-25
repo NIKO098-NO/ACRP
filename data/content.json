@@ -1,0 +1,53 @@
+{
+  "site": {
+    "heroTitle": "Alabama State Roleplay",
+    "heroTagline": "Realistic Alabama-based ERLC roleplay with structured departments and active staff.",
+    "heroBackground": "https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1920&q=80"
+  },
+  "events": [
+    {
+      "title": "Statewide Patrol Night",
+      "date": "2026-03-06",
+      "dept": "AST",
+      "desc": "Highway enforcement operation with county support and traffic unit activity."
+    },
+    {
+      "title": "Fire and Rescue Drill",
+      "date": "2026-03-10",
+      "dept": "AFR",
+      "desc": "Joint response scenario focused on medical and rescue coordination."
+    }
+  ],
+  "staff": [
+    {
+      "name": "Chief Mason Reed",
+      "role": "Server Director",
+      "bio": "Oversees staff standards and major community decisions.",
+      "pfp": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=240&q=80"
+    },
+    {
+      "name": "Deputy Ava Turner",
+      "role": "Community Manager",
+      "bio": "Handles moderation flow, scheduling, and policy updates.",
+      "pfp": "https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=240&q=80"
+    }
+  ],
+  "gallery": [
+    {
+      "title": "Night Patrol",
+      "caption": "Highway unit operation with multiple departments.",
+      "image": "https://images.unsplash.com/photo-1534187887988-a0f3ccf98f92?auto=format&fit=crop&w=1000&q=80"
+    },
+    {
+      "title": "Command Coordination",
+      "caption": "Dispatch and command management during active scenes.",
+      "image": "https://images.unsplash.com/photo-1573160813959-df05c2f13b7d?auto=format&fit=crop&w=1000&q=80"
+    }
+  ],
+  "rules": [
+    "Respect all members and staff.",
+    "No fail roleplay, random deathmatch, or trolling.",
+    "Follow active staff instructions during scenes.",
+    "No exploits, cheats, or abuse of game bugs."
+  ]
+}
