@@ -82,36 +82,58 @@
     nav.insertAdjacentElement("afterend", banner);
   }
 
-  async function handleVerifyRedirectFlow() {
+  async function setupVerifyPage() {
+    const root = document.getElementById("verifyRoot");
+    if (!root) return;
+
     const params = new URLSearchParams(window.location.search);
-    if (params.get("verified") !== "1") return;
+    const title = document.getElementById("verifyTitle");
+    const desc = document.getElementById("verifyDesc");
+    const progress = document.getElementById("verifyProgress");
+    const cta = document.getElementById("verifyCta");
 
-    const me = await getMe();
-    const nav = document.querySelector(".site-nav");
-    if (!nav) return;
+    function setState(pct, t, d) {
+      if (progress) progress.style.width = pct + "%";
+      if (title) title.textContent = t;
+      if (desc) desc.textContent = d;
+    }
 
-    const notice = document.createElement("div");
-    notice.className = "owner-greeting";
-
-    if (me?.authenticated && me?.isStaff && params.get("staff") === "1") {
-      notice.textContent = "Verification complete. Redirecting to Staff Panel...";
-      nav.insertAdjacentElement("afterend", notice);
-      setTimeout(function () {
-        window.location.href = "/panel.html";
-      }, 1800);
+    if (params.get("verified") !== "1") {
+      const me = await getMe();
+      if (me?.authenticated && me?.isStaff) {
+        setState(100, "Already Verified", "You are already authenticated. Redirecting to Staff Panel...");
+        setTimeout(function () {
+          window.location.href = "/panel.html";
+        }, 1200);
+        return;
+      }
+      setState(8, "Security Verification", "Sign in with Discord to verify and continue.");
+      if (cta) cta.style.display = "inline-flex";
       return;
     }
 
-    if (me?.authenticated && !me?.isStaff) {
-      notice.textContent = "Verification complete, but your account does not have a required staff role.";
-    } else {
-      notice.textContent = "Verification could not be completed. Please try Discord login again.";
+    setState(24, "Verifying Session", "Checking your Discord account...");
+    await new Promise(function (resolve) {
+      setTimeout(resolve, 420);
+    });
+    setState(56, "Validating Access", "Confirming server membership and staff role...");
+    await new Promise(function (resolve) {
+      setTimeout(resolve, 520);
+    });
+
+    const me = await getMe();
+    if (me?.authenticated && me?.isStaff) {
+      setState(100, "Verification Complete", "Access granted. Redirecting to Staff Panel...");
+      setTimeout(function () {
+        window.location.href = "/panel.html";
+      }, 1200);
+      return;
     }
 
-    nav.insertAdjacentElement("afterend", notice);
-    if (window.history && window.history.replaceState) {
-      window.history.replaceState({}, "", window.location.pathname);
-    }
+    setState(100, "Access Denied", "Your account is not authorized for the staff panel. Redirecting home...");
+    setTimeout(function () {
+      window.location.href = "/home.html";
+    }, 1700);
   }
 
   function renderHome(content) {
@@ -270,8 +292,13 @@
 
   (async function init() {
     try {
+      if (document.getElementById("verifyRoot")) {
+        await setupVerifyPage();
+        await renderOwnerGreeting();
+        return;
+      }
+
       const content = await loadContent();
-      await handleVerifyRedirectFlow();
       await renderOwnerGreeting();
       renderHome(content);
       renderEvents(content);

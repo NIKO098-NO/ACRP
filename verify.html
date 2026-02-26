@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASRP | Security Verification</title>
+  <link rel="icon" href="ASRP Logo.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Sora:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+
+  <nav class="site-nav">
+    <a class="brand" href="home.html"><img src="ASRP Logo.webp" alt="ASRP Logo" class="badge"><div><h1>Alabama State Roleplay</h1><small>Security Verification</small></div></a>
+    <button id="menuToggle" class="menu-toggle" type="button" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+    <div id="navLinks" class="nav-links"><a href="home.html">Home</a><a href="staff.html">Staff</a><a class="active" href="verify.html">Verify</a></div>
+  </nav>
+
+  <main id="verifyRoot" class="verify-wrap">
+    <section class="verify-card">
+      <p style="color:#8fe5d9; font-size:12px; letter-spacing:.14em; text-transform:uppercase; font-weight:700;">ASRP Secure Protocol</p>
+      <h2 id="verifyTitle" style="margin-top:10px; font-size:32px; font-family:'Bebas Neue',sans-serif; letter-spacing:1px;">Starting Verification</h2>
+      <p id="verifyDesc" style="color:#b7c7db; line-height:1.7; margin-top:8px;">Preparing your secure staff access flow.</p>
+
+      <div class="verify-meter"><span id="verifyProgress"></span></div>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+        <a id="verifyCta" class="btn btn-main" data-server-route="/auth/discord" href="/auth/discord" style="display:none;"><i class="fa-brands fa-discord"></i> Continue With Discord</a>
+        <a class="btn btn-soft" href="home.html"><i class="fa-solid fa-arrow-left"></i> Back Home</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-wrap">
+      <div class="footer-top">
+        <div class="footer-brand"><i class="fa-solid fa-shield-halved"></i> Alabama State Roleplay ERLC</div>
+        <div class="footer-links"><a href="home.html">Home</a><a href="rules.html">Rules</a><a href="events.html">Events</a></div>
+        <div class="footer-social"><a href="https://discord.gg/yourinvite" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-discord"></i> Discord</a></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 Alabama State Roleplay ERLC</span><span>Secure verification gateway</span></div>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

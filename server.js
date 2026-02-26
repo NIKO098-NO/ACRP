@@ -167,9 +167,9 @@ app.get("/auth/discord/callback", async (req, res) => {
     req.session.isStaff = hasStaffRole;
     delete req.session.oauthState;
 
-    // Verification-first flow:
-    // always return to home, then frontend decides whether to auto-redirect staff.
-    res.redirect(hasStaffRole ? "/home.html?verified=1&staff=1" : "/home.html?verified=1&staff=0");
+    // Verification page flow:
+    // return to verify UI, then frontend handles panel/home routing.
+    res.redirect(hasStaffRole ? "/verify.html?verified=1&staff=1" : "/verify.html?verified=1&staff=0");
   } catch {
     res.status(500).send("Discord auth failed.");
   }
